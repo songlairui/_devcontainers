@@ -16,5 +16,17 @@ build image:
 
 ```bash
 cd _common
-docker build -t node-dev:default -f ./node-dev/Dockerfile .
+docker build -t songlairui/node-dev:npm -f ../node-dev/Dockerfile .
+```
+
+### node-dev_taobao
+
+default node dev environment with zsh
+with taobao registry ---- https://registry.npm.taobao.org/
+
+build image:
+
+```bash
+cd _common
+docker build -t songlairui/node-dev:taobao -f ../node-dev_taobao/Dockerfile .
 ```
