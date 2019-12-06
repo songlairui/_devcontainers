@@ -4,6 +4,17 @@
 
 ## Folders
 
-\_common:
+### \_common
 
 - sources.list // debian source
+
+### node-dev
+
+default node dev environment with zsh
+
+build image:
+
+```bash
+cd _common
+docker build -t node-dev:default -f ./node-dev/Dockerfile .
+```

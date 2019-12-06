@@ -5,6 +5,8 @@
 
 FROM node:lts
 
+COPY ./sources.list  /etc/apt/sources.list
+
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -31,7 +33,7 @@ RUN apt-get update \
     && curl -sS https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/pubkey.gpg | apt-key add - 2>/dev/null \
     && echo "deb https://dl.yarnpkg.com/$(lsb_release -is | tr '[:upper:]' '[:lower:]')/ stable main" | tee /etc/apt/sources.list.d/yarn.list \
     && apt-get update \
-    && apt-get -y install --no-install-recommends yarn \
+    && apt-get -y install --no-install-recommends yarn zsh \
     #
     # Install eslint globally
     && npm install -g eslint \
